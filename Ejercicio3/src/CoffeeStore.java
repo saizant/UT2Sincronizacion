@@ -7,7 +7,9 @@ public class CoffeeStore {
 	        Thread.sleep(3000);
 	    }
 	     
-	    public void buyCoffee(String client) throws InterruptedException {
+	    //Declara el método synchronized para prevenir inconsistencias (establece
+	    //relación happens-before con cualquier llamada al método)
+	    public synchronized void buyCoffee(String client) throws InterruptedException {
 	        someLongRunningProcess();
 	        lastClient = client;
 	        soldCoffees++;
